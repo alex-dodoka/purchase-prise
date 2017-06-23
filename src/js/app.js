@@ -1,3 +1,4 @@
+'use strict';
 const discount1 = 10,
     discount2 = 50,
     firstCheckSum = 100,
@@ -11,9 +12,9 @@ function getDiscount() {
         fourthPice = parseInt($('#fourth-product').val()),
         totalPrice = getSum(firstPrice, secondPrice, thirdPrice, fourthPice);
 
-    if (totalPrice > firstCheckSum) {
+    if (totalPrice >= firstCheckSum) {
         printSum(getPercentages(totalPrice, discount1));
-    } else if (totalPrice > secondCheckSum) {
+    } else if (totalPrice >= secondCheckSum) {
         printSum(getPercentages(totalPrice, discount2));
     } else {
         printSum(totalPrice);
